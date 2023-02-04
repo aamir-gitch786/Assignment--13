@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include<math.h>
 int power_number(int,int);
-int ans=0;
+int ans=1;
 int main()
 {   int a,b;
     printf("Enter the number(base) :");
@@ -18,10 +18,10 @@ int main()
 }
 int power_number(int B,int P)
 {
-    if(P>1)
-    {  P--;
-        ans+=B*pow(B,P);
-        power_number(B,P);//recursion
-    }
-    return ans;
+    if(P==1)
+    return B;
+    
+    return B*power_number(B,--P);
+    
+   
 }
